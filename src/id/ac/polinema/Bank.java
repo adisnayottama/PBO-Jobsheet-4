@@ -21,13 +21,30 @@ public class Bank {
     public Account findAccount(String accountNumber) {
         for (int i = 0; i < count; i++) {
             if (accounts[i].getAccountNumber().equals(accountNumber)) {
-                return accounts[i]; // TAMBAHKAN BARIS INI
+                return accounts[i];
             }
         }
         return null;
     }
+// tugas mandiri
+    public Account[] findAccountsByOwnerName(String name) {
+        int matchCount = 0;
+        for (int i = 0; i < count; i++) {
+            if (accounts[i].getOwner().getName().equals(name)) {
+                matchCount++;
+            }
+        }
+        Account[] matches = new Account[matchCount];
+        int index = 0;
+        for (int i = 0; i < count; i++) {
+            if (accounts[i].getOwner().getName().equals(name)) {
+                matches[index] = accounts[i];
+                index++;
+            }
+        }
+        return matches;
+    }
 
-    // TAMBAHKAN HURUF 's' DI AKHIR NAMA METHOD
     public void printAllAccounts() {
         for (int i = 0; i < count; i++) {
             accounts[i].printInfo();
