@@ -2,7 +2,7 @@ package id.ac.polinema;
 
 public class Account {
     private String accountNumber;
-    private Customer owner;
+    private Customer owner; // ganti String ke tipe Customer
     private double balance;
 
     public Account(String accountNumber, Customer owner, double balance) {
@@ -15,7 +15,7 @@ public class Account {
         return accountNumber;
     }
 
-    public Customer getOwner() {
+    public Customer getOwner() { // getter mengembalikan tipe data Customer
         return owner;
     }
 
@@ -40,6 +40,7 @@ public class Account {
     }
 
     public void printInfo() {
+        //nama pemilik diambil dari method owner.getName()
         System.out.println(accountNumber + " - " + owner.getName() + " - balance: " + balance);
     }
 }
