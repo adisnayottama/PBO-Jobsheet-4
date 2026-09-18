@@ -2,12 +2,12 @@ package id.ac.polinema;
 
 public class Account {
     private String accountNumber;
-    private String ownerName;
+    private Customer owner;
     private double balance;
 
-    public Account(String accountNumber, String ownerName, double balance) {
+    public Account(String accountNumber, Customer owner, double balance) {
         this.accountNumber = accountNumber;
-        this.ownerName = ownerName;
+        this.owner = owner;
         this.balance = balance;
     }
 
@@ -15,8 +15,8 @@ public class Account {
         return accountNumber;
     }
 
-    public String getOwnerName() {
-        return ownerName;
+    public Customer getOwner() {
+        return owner;
     }
 
     public double getBalance() {
@@ -40,6 +40,6 @@ public class Account {
     }
 
     public void printInfo() {
-        System.out.println(accountNumber + " - " + ownerName + " - balance: " + balance);
+        System.out.println(accountNumber + " - " + owner.getName() + " - balance: " + balance);
     }
 }
