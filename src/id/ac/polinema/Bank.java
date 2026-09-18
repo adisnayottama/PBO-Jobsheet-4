@@ -1,7 +1,7 @@
 package id.ac.polinema;
 
 public class Bank {
-    private  Account[] accounts;
+    private Account[] accounts;
     private int count;
 
     public Bank(int capacity) {
@@ -18,14 +18,17 @@ public class Bank {
         return true;
     }
 
-    public Account findAccount(String accountNumber){
+    public Account findAccount(String accountNumber) {
         for (int i = 0; i < count; i++) {
             if (accounts[i].getAccountNumber().equals(accountNumber)) {
+                return accounts[i]; // TAMBAHKAN BARIS INI
             }
         }
         return null;
     }
-    public void printAllAccount() {
+
+    // TAMBAHKAN HURUF 's' DI AKHIR NAMA METHOD
+    public void printAllAccounts() {
         for (int i = 0; i < count; i++) {
             accounts[i].printInfo();
         }
